@@ -63,7 +63,7 @@ to quickly create a Cobra application.`,
 
 		auth.Register(r.Group("/auth"), auth.NewAPI(auth.NewService(dbpool)))
 
-		r.Run()
+		r.Run(viper.GetString("http.address"))
 	},
 }
 
